@@ -1,14 +1,24 @@
-import './globals.css'
+import "./globals.css";
+import { Poppins } from "next/font/google";
+
+import Navbar from "./component/Navbar";
+import { MyProvider } from "@/ContextAPI";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+      <MyProvider>
+        <head />
+        <body className={poppins.className}>
+          <Navbar />
+          {children}
+        </body>
+      </MyProvider>
     </html>
-  )
+  );
 }
