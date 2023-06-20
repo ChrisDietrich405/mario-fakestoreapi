@@ -12,11 +12,12 @@ import Typography from "@mui/material/Typography";
 import Cart from "../Cart/page";
 
 const DetailsPage = ({ details }) => {
-  const { addToCart } = useContext(MyContext);
+  const { hello, addToCart } = useContext(MyContext);
 
   return (
     <div>
       {" "}
+      {/* {hello} */}
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia>
           <img
@@ -38,9 +39,10 @@ const DetailsPage = ({ details }) => {
         </CardContent>
         <CardActions>
           <Button size="small">Share</Button>
-          <Button onClick={() => addToCart({ ...details })} size="small">
+          <Button onClick={() => addToCart({ ...details })}>click</Button>
+          {/* <Button onClick={() => addToCart({ ...details })} size="small">
             Add to cart
-          </Button>
+          </Button> */}
         </CardActions>
       </Card>
       <Cart />

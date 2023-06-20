@@ -23,7 +23,6 @@ const ProductsPage = async () => {
   console.log(products);
   return (
     <div
-      className={styles.container}
       style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
     >
       {products.map((product) => {
@@ -48,9 +47,10 @@ const ProductsPage = async () => {
                 style={{ position: "relative", width: "100%", height: "100%" }}
               >
                 <img
+                  className={styles.image}
                   src={product.image}
-                  width={50}
-                  height={50}
+                  width={150}
+                  height={150}
                   alt="Picture of the author"
                 />
               </div>
@@ -75,12 +75,13 @@ const ProductsPage = async () => {
             <div style={{ flexGrow: 1 }} />
             <CardActions>
               <Link
-                style={{
-                  borderRadius: "4px",
-                  textDecoration: "none",
-                  padding: "10px 30px",
-                  backgroundColor: "#000",
-                }}
+                className={styles.btn}
+                // style={{
+                //   borderRadius: "4px",
+                //   textDecoration: "none",
+                //   padding: "10px 30px",
+                //   backgroundColor: "#000",
+                // }}
                 href={`/products/${product.id}`}
               >
                 Details

@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
-import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar/page";
 import { MyProvider } from "@/ContextAPI";
 
 const poppins = Poppins({
